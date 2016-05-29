@@ -1,4 +1,9 @@
 #!/bin/sh
+
+# Based on
+# https://bbs.archlinux.org/viewtopic.php?id=191555
+# https://bitbucket.org/denilsonsa/small_scripts/src/default/screenlayout/create-virtual-modelines.sh?fileviewer=file-view-default
+
 add_modeline() {
 	local modeline name
 	modeline="$(gtf "$2" "$3" "$4" | sed -n 's/.*Modeline "\([^" ]\+\)" \(.*\)/\1 \2/p')"

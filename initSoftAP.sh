@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# https://nims11.wordpress.com/2012/04/27/hostapd-the-linux-way-to-create-virtual-wifi-access-point/
+
 if [ "$1" == "-f" ]; then 
   rm -rf /tmp/hostapd.lock
 fi
@@ -39,7 +41,7 @@ sleep 1
  
 sysctl -w net.ipv4.ip_forward=1
 #start hostapd
-hostapd /etc/hostapd/hostapd.conf 1>/dev/null 2>&1 &
+hostapd hostapd.conf 1>/dev/null 2>&1 &
 #killall dhcpd
 
 touch /tmp/hostapd.lock
